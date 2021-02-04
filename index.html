@@ -1,1 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Dice Game - 2 Players</title>
+</head>
+<body>
+    <div class="pageWrapper">
+        <div class="gameBox">
+            
+            <div class="player1">
 
+                <div class="stats1">
+                    <h1 id="playerStatus1">Player 1</h1>
+                    <h2 id="displayPoints1">0</h2>
+                </div>
+
+                <div class="current1">
+                    <h3>current</h3>
+                    <h2 id="currentPoints1">0</h2>
+                </div>
+                
+            </div>
+
+            <div class="middleBox">
+                <button id="newGame"><i class="fas fa-sync-alt"></i>new game</button>
+                <img src="" id="displayDice" width="120px" height="120px">
+                <button id="roll"><i class="fas fa-plus-circle"></i>roll</button>
+                <button id="hold"><i class="fas fa-arrow-circle-down"></i>hold</button>
+            </div> 
+
+
+            <div class="player2">
+
+                <div class="stats2">
+                    <h1 id="playerStatus2">Player 2</h1>
+                    <h2 id="displayPoints2">0</h2>
+                </div>
+
+                <div class="current2">
+                    <h3>current</h3>
+                    <h2 id="currentPoints2">0</h2>
+                </div>
+
+            </div>          
+        </div>
+    </div>
+    
+
+
+    <script src="script.js"></script><script src="https://kit.fontawesome.com/96185cc4e8.js" crossorigin="anonymous"></script>
+</body>
+</html>
