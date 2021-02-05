@@ -22,7 +22,7 @@ body {
 
 
 .gameBox {
-    width: 888px;
+    width: 800px;
     height: 400px;
     display: flex;
     justify-content: center;
@@ -43,6 +43,10 @@ body {
 .middleBox {
     /*TEMPORARY SOLUTION. Got to make z-index and stuff*/
     background: linear-gradient(to right, #eee,rgb(240, 180, 83));
+}
+
+img {
+    border-radius: 10px;
 }
 
 .player1 {
@@ -80,18 +84,21 @@ i {
     margin: 0 0.5rem;
 }
 
+
 .current1, .current2 {
     margin-top: 1.5rem;
-    background-color: rgba(255, 0, 43, 0.65);
+    background-color: rgb(230, 71, 98);
     padding: 0 1rem;
     border-radius: 10px;
+    width: 130px;
+    height: 120px;
 }
 
 
 button {
     font-family: 'Roboto Mono', monospace;
     color: #000;
-    font-size: 1.15rem;
+    font-size: 1rem;
     text-transform: uppercase;
     background: none;
     font-weight: 200;
@@ -103,4 +110,8 @@ button {
 
 button:hover {
     scale:1.1;
+}
+
+#newGame {
+    letter-spacing: 2px;;
 }

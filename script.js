@@ -1,14 +1,15 @@
 const newGame = document.querySelector("#newGame")
 const roll = document.querySelector("#roll")
 const hold = document.querySelector("#hold")
-let displayDice = document.querySelector("displayDice")
-let displayPoints1 = document.querySelector("displayPoints1")
-let displayPoints2 = document.querySelector("displayPoints1")
-let playerStatus1 = document.querySelector("playerStatus1")
-let playerStatus2 = document.querySelector("playerStatus2")
+let displayDice = document.querySelector("#displayDice")
+let displayPoints1 = document.querySelector("#displayPoints1")
+let displayPoints2 = document.querySelector("#displayPoints1")
+let playerStatus1 = document.querySelector("#playerStatus1")
+let playerStatus2 = document.querySelector("#playerStatus2")
 let pointsCounter1 = 0;
 let pointsCounter2 = 0;
-let cp1;
+let cp1 = document.getElementById('playerStatus1').classList.add('currentP1');
+
 
 
 roll.style.display = "none";
@@ -18,7 +19,6 @@ newGame.addEventListener("click", (event) => {
     let cp1 = document.getElementById('playerStatus1').classList.add('currentP1');
     roll.style.display = "block";
     hold.style.display = "block";
-    return cp1;
 });
 
 roll.addEventListener("click", (event) => {
@@ -52,28 +52,28 @@ function playOne() {
 
     } else if (diceRoll === 2) {
         displayDice.src = "img/dice2.png"
-        displayPoints1.innerText = pointsCounter;
+        displayPoints1.innerText = pointsCounter1;
         pointsCounter1 += diceRoll;
     } else if (diceRoll === 3) {
         displayDice.src = "img/dice3.png"
-        displayPoints1.innerText = pointsCounter;
+        displayPoints1.innerText = pointsCounter1;
         pointsCounter1 += diceRoll;
     } else if (diceRoll === 4) {
         displayDice.src = "img/dice4.png"
-        displayPoints1.innerText = pointsCounter;
+        displayPoints1.innerText = pointsCounter1;
         pointsCounter1 += diceRoll;
     } else if (diceRoll === 5) {
         displayDice.src = "img/dice5.png"
-        displayPoints1.innerText = pointsCounter;
+        displayPoints1.innerText = pointsCounter1;
         pointsCounter1 += diceRoll;
     } else {
         displayDice.src = "img/dice6.png"
-        displayPoints1.innerText = pointsCounter;
+        displayPoints1.innerText = pointsCounter1;
         pointsCounter1 += diceRoll;
     }
 
 
-    if (pointsCounter >= 20) {
+    if (pointsCounter1 >= 20) {
         displayPoints1.innerText = "You won!";
         pleyOne();
     }
@@ -92,28 +92,28 @@ function playTwo() {
 
     } else if (diceRoll === 2) {
         displayDice.src = "img/dice2.png"
-        displayPoints1.innerText = pointsCounter;
+        displayPoints1.innerText = pointsCounter2;
         pointsCounter1 += diceRoll;
     } else if (diceRoll === 3) {
         displayDice.src = "img/dice3.png"
-        displayPoints1.innerText = pointsCounter;
+        displayPoints1.innerText = pointsCounter2;
         pointsCounter1 += diceRoll;
     } else if (diceRoll === 4) {
         displayDice.src = "img/dice4.png"
-        displayPoints1.innerText = pointsCounter;
+        displayPoints1.innerText = pointsCounter2;
         pointsCounter1 += diceRoll;
     } else if (diceRoll === 5) {
         displayDice.src = "img/dice5.png"
-        displayPoints1.innerText = pointsCounter;
+        displayPoints1.innerText = pointsCounter2;
         pointsCounter1 += diceRoll;
     } else {
         displayDice.src = "img/dice6.png"
-        displayPoints1.innerText = pointsCounter;
+        displayPoints1.innerText = pointsCounter2;
         pointsCounter1 += diceRoll;
     }
 
 
-    if (pointsCounter >= 20) {
+    if (pointsCounter2 >= 20) {
         displayPoints2.innerText = "You won!";
         pleyOne();
     }
