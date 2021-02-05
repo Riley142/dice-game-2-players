@@ -3,7 +3,7 @@ const roll = document.querySelector("#roll")
 const hold = document.querySelector("#hold")
 let displayDice = document.querySelector("#displayDice")
 let displayPoints1 = document.querySelector("#displayPoints1")
-let displayPoints2 = document.querySelector("#displayPoints1")
+let displayPoints2 = document.querySelector("#displayPoints2")
 let currentPoints1 = document.querySelector("#currentPoints1")
 let currentPoints2 = document.querySelector("#currentPoints2")
 let playerStatus1 = document.querySelector("#playerStatus1")
@@ -16,6 +16,10 @@ let playerOne = true;
 roll.style.display = "none";
 hold.style.display = "none";
 
+
+let cp1 = document.getElementById('playerStatus1');
+cp1.classList.add('currentP1');
+
 newGame.addEventListener("click", (event) => {
     roll.style.display = "block";
     hold.style.display = "block";
@@ -23,26 +27,22 @@ newGame.addEventListener("click", (event) => {
 });
 
 roll.addEventListener("click", (event) => {
-    if (playerOne === true) {
+    if (playerOne) {
         playOne();
         console.log("player one playing");
-    } else if (playerOne === false) {
-        playerOne = false;
+    } else {
         console.log("player two playing");
-        playOne();
+        playTwo();
     }  
 });
 
 hold.addEventListener("click", (event) => {
-    if (playerOne === true) {
-        console.log("should start player two?");
-    } else if (playerOne === false) {
-        console.log("should start player one?");
-        playTwo();
-    }
+    let cp1 = document.getElementById('playerStatus1');
+    cp1.classList.remove('currentP1');
+    let cp2 = document.getElementById('playerStatus2');
+    cp2.classList.add('currentP2');
+    playerOne = !playerOne;
 });
-
-
 
 function startAgain() {
     window.location.reload();
@@ -50,8 +50,6 @@ function startAgain() {
 
 
 function playOne() {
-    let cp1 = document.getElementById('playerStatus1').classList.add('currentP1');
-    let cp2 = document.getElementById('playerStatus2').classList.remove('currentP2');
 
     const diceRoll = Math.floor(Math.random() * 6) + 1;
     
@@ -97,9 +95,6 @@ function playOne() {
 
 
 function playTwo() {
-    let cp1 = document.getElementById('playerStatus1').classList.remove('currentP1');
-    let cp2 = document.getElementById('playerStatus2').classList.add('currentP2');
-    
     const diceRoll = Math.floor(Math.random() * 6) + 1;
 
     if (diceRoll === 1) {
